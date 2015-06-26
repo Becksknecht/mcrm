@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- in Zeile 51 befindet sich ein php include auf die Datei nav_loginanzeige. 
+<!-- in Zeile 53 befindet sich ein php include auf die Datei nav_loginanzeige. 
 Diese fügt der Navigation einges an Funktionalität hinzu -->
 <html>
 <head>
@@ -71,7 +71,7 @@ Diese fügt der Navigation einges an Funktionalität hinzu -->
 		 } else {
 			 $("#menuNutzerverwaltung").show();			 
 		 }
-		 //Kommentar - Trottel
+	
 		//Eingeloggte Nutzer sehen Logut, nicht eingeloggte den Login-Button:
 		
 		
