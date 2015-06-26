@@ -60,15 +60,17 @@
 	
 		//dynamische Anzeige der Navigationselemente:	
 		//Adminansicht: Nutzerverwaltung sichtbar - für andere Nutzer unsichtbar
-		 var admin=1; //hier musst du dann die php variable übergeben, alles weitere sollte so passen
-		 if (admin==0){
+		
+		
+		 if (rolle==0){
 			 $("#menuNutzerverwaltung").hide();
 		 } else {
 			 $("#menuNutzerverwaltung").show();			 
 		 }
 		 
 		//Eingeloggte Nutzer sehen Logut, nicht eingeloggte den Login-Button:
-		 var eingeloggt=1; //hier analog dann die "eingeloggt" variable aus php übergeben -> Annahme: 0 = nicht eingeloggt, 1 = eingeloggt
+		
+		
 		 if (eingeloggt==0){
 			 $("#menuLogin").show();
 			 $("#menuLogut").hide();
