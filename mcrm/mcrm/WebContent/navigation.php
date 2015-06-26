@@ -61,24 +61,28 @@ Diese fügt der Navigation einges an Funktionalität hinzu -->
 		//dynamische Anzeige der Navigationselemente:	
 		//Adminansicht: Nutzerverwaltung sichtbar - für andere Nutzer unsichtbar
 		
+		$("#menuLogut").hide();
+		$("#menuLadenansicht").hide();
+		$("#menuBeratung").hide();
+		$("#menuNutzerverwaltung").hide();
 		
 		 if (rolle==0){
 			 $("#menuNutzerverwaltung").hide();
 		 } else {
 			 $("#menuNutzerverwaltung").show();			 
 		 }
-		 
+		 //Kommentar - Trottel
 		//Eingeloggte Nutzer sehen Logut, nicht eingeloggte den Login-Button:
 		
 		
 		 if (eingeloggt==0){
 			 $("#menuLogut").hide();
 			 $("#menuLadenansicht").hide();
-			 $("#menuBeratungsansicht").hide();
+			 $("#menuBeratung").hide();
 		 } else {
 			 $("#menuLogut").show();
 			 $("#menuLadenansicht").show();
-			 $("#menuBeratungsansicht").show();
+			 $("#menuBeratung").show();
 		 }
 		 		 
 		//Hinterlege aktive Seite in der Navigationsleiste mit Farbe:
