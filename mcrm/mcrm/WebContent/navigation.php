@@ -46,11 +46,8 @@
 							class="glyphicon glyphicon-cog big"> </span> Nutzer verwalten</a></li>
 					<li id="menuLogut"><a href="php/logout.php"><span
 							class="glyphicon glyphicon-off big"> </span> Logut</a>
-					
-					<li id="menuLogin"><a href="login.php"><span
-							class="glyphicon glyphicon-user big"> </span> Login</a></li>
-					<li id="menuLoginstatus"><?php include 'php/nav_loginanzeige.php'?></li>
 				</ul>
+				<p class="navbar-text navbar-right" id=menuLoginstatus> <?php include 'php/nav_loginanzeige.php'?></p>
 			</div>
 		</div>
 	</div>
@@ -72,12 +69,10 @@
 		
 		
 		 if (eingeloggt==0){
-			 $("#menuLogin").show();
 			 $("#menuLogut").hide();
 			 $("#menuLadenansicht").hide();
 			 $("#menuBeratungsansicht").hide();
 		 } else {
-			 $("#menuLogin").hide();
 			 $("#menuLogut").show();
 			 $("#menuLadenansicht").show();
 			 $("#menuBeratungsansicht").show();

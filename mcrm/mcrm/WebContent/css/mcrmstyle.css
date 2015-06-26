@@ -10,6 +10,11 @@
 		margin-left: 15px;
 	}
 	
+	#menuLoginstatus{
+		color: #FFD48E;
+		font-weight: bold;
+	}
+	
 	.jumbotron{
 		background-color: #F8F8F8;
 		border: solid #FFD48E 2px;
