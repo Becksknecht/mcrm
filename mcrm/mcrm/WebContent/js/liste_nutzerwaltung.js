@@ -3,7 +3,7 @@
 	$
 			.ajax({
 				type : "POST",
-				url : "php/loadnutzerverw.php",
+				url : "php/sql_loadnutzerverw.php",
 				dataType : "json",
 				/*
 				 * data: { mail: $("input[name="mail"]").val(), message:
