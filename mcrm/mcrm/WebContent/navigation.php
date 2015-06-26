@@ -38,7 +38,7 @@
 					<li id="menuLadenansicht"><a href="ladenansicht.php"><span
 							class="glyphicon glyphicon-tasks big"> </span> Kunden
 							ausw&auml;hlen</a></li>
-					<li id="menuBeratungsansicht"><a href="beratung.php"><span
+					<li id="menuBeratung"><a href="beratung.php"><span
 							class="glyphicon glyphicon-comment big"> </span> Kunden beraten</a>
 					</li>
 
@@ -90,36 +90,30 @@
 						3:= Nutzerverwaltung
 						(vorerst zum Testen - evtl später anpassen?)
 					*/
-		var pageID;
-						
-			/*	1. Der grade überprüften Seite die ID des entsprechenden Menü-Elementes zuweisen
-				2. Überprüfe ob zu testende Seite der aktiven Seite entspricht
-				Wenn ja: 
-				3. 	Füge Klasse "active" hinzu (Sorgt für Hinterlegung des Menüelementes)
-				Wenn nein:
-				3. 	Entferne Klasse "active"
-			Alle Seiten durchgehen, wenn aktive Seite gefunden markieren, Class "active" hinzugfügen, bei allen anderen class active entfernen*/			
-		for (var i=0;i<=3;i++){
-			//1. Seite den Element-IDs der Navigation zuordnen
-			switch(i){
-				case 0: pageID="#menuLogin";
-				break;
-				case 1: pageID="#menuLadenansicht";
-				break;
-				case 2: pageID="#menuBeratungsansicht";
-				break;
-				case 3: pageID="#menuNutzerverwaltung";
-				break;
-			}	
-				
-			//2. Überprüfe ob es sich um die aktive Seite handelt
-			if (i==activePage){ 
-				//Klasse zum hervorheben hinzufügen
-				$(pageID).addClass("active");
-			} else
-				//Klasse zum hervorheben entfernen
-				$(pageID).removeClass("active");
-		}
+		
+		
+		
+
+		//aktive Seite aus Pfad auslesen: 
+		/*	1. Bestimme Pfad
+			2. Extrahiere Dateinamen
+			3. Entferne Dateierweiterung (.php)
+			4. Erstelle MenüID
+			5. Highlighte entsprechenden Menüpunkt*/
+
+		//1. Bestimme Pfad:
+		var path = window.location.pathname;
+		//2. Extrahiere Dateinamen:
+		var patt = /[a-z]*.php/ig; //Regulärer Ausdruck - matcht auf Zeichenketten, die dem Muster folgen /<beliebige Buchstabenfolge>.php
+		var page = patt.exec(path); //Sucht im Dateipfad nach diesem Muster und extrahiert den String aus dem Pfad
+		//3. Entferne Dateierweiterung: 
+		var strPage = String(page); //Umwandeln des Obejektes in String
+		var p = strPage.indexOf("."); //Stelle des Punktes herausfinden
+		var pageID = strPage.slice(0,p); //.php abschneiden 
+		//4. Erstelle MenüID
+		pageID = "#menu"+pageID.substring(0,1).toUpperCase() + pageID.substring(1).toLowerCase(); //Erstelle String, der auf Navigationselemente referenziert
+		//5. Highlighte Menüeintrag der aktiven Seite
+		$(pageID).addClass("active");
 
 	</script>
 </body>
