@@ -1,4 +1,6 @@
 <!DOCTYPE html>
+<!-- in Zeile 51 befindet sich ein php include auf die Datei nav_loginanzeige. 
+Diese fügt der Navigation einges an Funktionalität hinzu -->
 <html>
 <head>
 <meta charset="ISO-8859-1">
@@ -46,6 +48,7 @@
 							class="glyphicon glyphicon-cog big"> </span> Nutzer verwalten</a></li>
 					<li id="menuLogut"><a href="php/logout.php"><span
 							class="glyphicon glyphicon-off big"> </span> Logut</a>
+				
 				</ul>
 				<p class="navbar-text navbar-right" id=menuLoginstatus> <?php include 'php/nav_loginanzeige.php'?></p>
 			</div>
@@ -63,7 +66,6 @@
 		$("#menuBeratung").hide();
 		$("#menuNutzerverwaltung").hide();
 		
-		
 		 if (rolle==0){
 			 $("#menuNutzerverwaltung").hide();
 		 } else {
@@ -71,7 +73,6 @@
 		 }
 		 
 		//Eingeloggte Nutzer sehen Logut, nicht eingeloggte den Login-Button:
-		
 		
 		
 		 if (eingeloggt==0){
