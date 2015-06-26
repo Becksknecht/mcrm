@@ -82,19 +82,6 @@
 		 }
 		 		 
 		//Hinterlege aktive Seite in der Navigationsleiste mit Farbe:
-		var activePage = 2;
-					/* 	Bedeutungen: 
-						0:= login-Seite
-						1:= Ladenansicht (Kundenauswahl)
-						2:= Beratungsansicht (Kundengespräch)
-						3:= Nutzerverwaltung
-						(vorerst zum Testen - evtl später anpassen?)
-					*/
-		
-		
-		
-
-		//aktive Seite aus Pfad auslesen: 
 		/*	1. Bestimme Pfad
 			2. Extrahiere Dateinamen
 			3. Entferne Dateierweiterung (.php)
