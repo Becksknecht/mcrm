@@ -1,3 +1,5 @@
+<?php include 'php/loginstatus.php'?>
+<?php include 'navigation.php';?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -86,7 +88,7 @@
 						<div class="form-group col-sm-offset-2">
 
 							<input type="submit" name="submit" class="btn btn-success btn-lg"
-								id="loginbutton" value="Login!" />
+								id="loginbutton" value="Nutzer anlegen!" />
 
 						</div>
 

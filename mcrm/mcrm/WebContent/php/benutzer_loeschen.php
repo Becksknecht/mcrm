@@ -17,15 +17,19 @@ if (! empty ( $_POST ["submit"] )) {
 	if ($anzahl == 0) {
 		echo '<script type="text/javascript">alert("Dieser Nutzer existiert nicht!");window.history.go(-2);</script>';
 	} else {
-		// SQL Statement zum löschen des angegebenen benutzers
-		$sql = "DELETE FROM Verkäufer WHERE Nutzername='$username'";
 		
-		// Ausführen des Löschbefehls
-		$del = mysql_query ( $sql, $link );
-		
-	
-		
-		header('location: ../nutzerverwaltung.php');
+		// Verhindern, dass findige administratoren sich selbst löschen
+		if ($_SESSION ['user'] ['Nutzername'] == $username) {
+			echo '<script type="text/javascript">alert("Computer says no: pls don\'t suicide!");window.history.go(-1);</script>';
+		} else {
+			// SQL Statement zum löschen des angegebenen benutzers
+			$sql = "DELETE FROM Verkäufer WHERE Nutzername='$username'";
+			
+			// Ausführen des Löschbefehls
+			$del = mysql_query ( $sql, $link );
+			
+			header ( 'location: ../nutzerverwaltung.php' );
+		}
 	}
 } else {
 	echo "Fehler beim submit";
