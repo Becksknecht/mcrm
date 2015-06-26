@@ -1,0 +1,29 @@
+<?php
+#Einbinden der Datenbankverbindung
+include 'dbconnect.php';
+
+/*
+ * SQL statement zum abrufen aller aktiven Kunden. Später sollte, hier die Zutrittskontrolle (zb. 
+ *Gesichtserkennung in Verbindung mit NFC) dafür sorgen, dass zum einen neue Kunden in die Datenbank
+ *eingetragen werden und zum anderen, dass das Attribut "Kunde_inStore" beim betreten auf 1 gesetzt wird
+ *und beim Verlassen wieder auf 0. Solange dieses System nicht eingebunden ist, werden einfach Stumpf alle
+ *Kunden aus der Datenbank angezeigt, obwohl Kunde_inStore = 0 ist.
+ *Weiterhin werden die Kunden aufsteigend nach Priorität "Kundenklasse" geordnet.
+*/
+$sql = "SELECT * From Kunde WHERE Kunde_inStore = 0 ORDER BY Kundenklasse_Kundenklasse ASC";
+#INSTORE wird wnen man kunde annimt auf 0 gesetzt
+
+
+
+# Durchführen des SQL befehls und speichern des Ergenisses in $res
+$res = mysql_query($sql);
+# Erstellen des Arrays reply mit den Kunden-Objekten aus der Datenbank
+while ($row = mysql_fetch_assoc($res)) {
+		$reply[]=$row;
+	
+}
+
+
+#Das Array via json an die Ladenansicht.js zurückgeben, dort wird das Ergebniss mit Ajax weiterverarbeitet
+echo json_encode($reply);
+?>
