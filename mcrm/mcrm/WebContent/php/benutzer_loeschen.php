@@ -2,18 +2,32 @@
 include 'dbconnect.php';
 
 if (! empty ( $_POST ["submit"] )) {
-
-	// nurzum debuggen foreach($_POST as $k=>$v) echo $k . ' -> ' . $v."<br />";
-
+	
 	/*
-	 * Die im Login eingegeben Daten sollten "escaped" bzw.
-	 * maskiert werden um beispielsweiße SQL Injections
-	 * entgegenzuwirken
+	 * escapen der übergegebenen daten
 	 */
-	$username = mysql_real_escape_string ( $_POST ["username"] );
-	echo $username;
-}
-else{
-	echo "geht net";
+	$username = mysql_real_escape_string ( $_POST ["user"] );
+	
+	// SQL zum Überprüfen ob der Nutzer existiert
+	$sql = "SELECT * FROM Verkäufer WHERE Nutzername='$username'";
+	$res = mysql_query ( $sql, $link );
+	$anzahl = @mysql_num_rows ( $res );
+	
+	// Überprüfen ob nutzer existiert
+	if ($anzahl == 0) {
+		echo '<script type="text/javascript">alert("Dieser Nutzer existiert nicht!");window.history.go(-2);</script>';
+	} else {
+		// SQL Statement zum löschen des angegebenen benutzers
+		$sql = "DELETE FROM Verkäufer WHERE Nutzername='$username'";
+		
+		// Ausführen des Löschbefehls
+		$del = mysql_query ( $sql, $link );
+		
+	
+		
+		header('location: ../nutzerverwaltung.php');
+	}
+} else {
+	echo "Fehler beim submit";
 }
 ?>

@@ -28,6 +28,8 @@
 <div class="container">
 	<h2>Nutzerverwaltung</h2>
 
+	
+
 	<div class="jumbotron" id="nutzerContainer"></div>
 
 
@@ -48,23 +50,7 @@
 
 	</div>
 
-
-
-
-
-
 </div>
-
-
-
-
-
-
-
-
-
-
-
 
 </body>
 </html>
