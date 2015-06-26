@@ -31,7 +31,7 @@
 
 
 	<div class="container">
-		<h1>Nutzer löschen</h1>
+		<h1>Nutzer l&ouml;schen</h1>
 
 
 		<div class="jumbotron" id="formContainerLoeschen">

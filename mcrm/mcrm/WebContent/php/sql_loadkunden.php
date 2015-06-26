@@ -7,10 +7,11 @@ include 'dbconnect.php';
  *Gesichtserkennung in Verbindung mit NFC) dafür sorgen, dass zum einen neue Kunden in die Datenbank
  *eingetragen werden und zum anderen, dass das Attribut "Kunde_inStore" beim betreten auf 1 gesetzt wird
  *und beim Verlassen wieder auf 0. Solange dieses System nicht eingebunden ist, werden einfach Stumpf alle
- *Kunden aus der Datenbank angezeigt, obwohl Kunde_inStore = 0 ist.
+ *Kunden mit Kunde_inStore=1 in die DB eingetragen.
  *Weiterhin werden die Kunden aufsteigend nach Priorität "Kundenklasse" geordnet.
 */
-$sql = "SELECT * From Kunde WHERE Kunde_inStore = 0 ORDER BY Kundenklasse_Kundenklasse ASC";
+$sql = "SELECT * From Kunde WHERE Kunde_inStore = 1 ORDER BY Kundenklasse_Kundenklasse ASC";
+
 #INSTORE wird wnen man kunde annimt auf 0 gesetzt
 
 

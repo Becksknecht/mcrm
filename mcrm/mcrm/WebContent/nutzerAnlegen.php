@@ -25,63 +25,78 @@
 
 </head>
 
-<div class="container">
-	<h2>Nutzer anlegen</h2>
 
-	<div class="row">
-		<div class="jumbotron" id="formContainerAnlegen">
 
-			<form action="">
-				<div class="form-group">
-					<label for="nutzername" class="col-sm-2 control-label topmargin">Nutzername</label>
-					<div class="col-xs-10">
-						<input type="text" class="form-control topmargin" id="nutzername"
-							placeholder="Nutzername">
-					</div>
-				</div>
-				
-				
-				<div class="form-group">
-					<label for="passwort" class="col-sm-2 control-label topmargin">Passwort</label>
-					<div class="col-xs-10">
-						<input type="text" class="form-control topmargin" id="passwort"
-							placeholder="Passwort">
-					</div>
-				</div>
-				
-				<div class="form-group">
-					<label for="vorname" class="col-sm-2 control-label topmargin">Vorname</label>
-					<div class="col-xs-10"> 
-						<input type="text" class="form-control topmargin" id="vorname"
-							placeholder="Vorname">
-					</div>
-				</div>
-				
-				<div class="form-group">
-					<label for="nachname" class="col-sm-2 control-label topmargin">Nachname</label>
-					<div class="col-xs-10">
-						<input type="text" class="form-control topmargin" id="nachname"
-							placeholder="Nachname">
-					</div>
-				</div>
-				
-				<div class="form-group">
-					<div class="col-sm-offset-5 col-sm-10">
-						<button type="submit" class="btn btn-success topmargin">Nutzer anlegen</button>
-					</div>
-				</div>
+<body>
 
+	<div class="container">
+		<h1>Nutzer anlegen</h1>
+
+
+		<div class="jumbotron" id="nutzerAnlegenbox">
+
+
+
+			<form action=php/benutzer_anlegen.php method="post">
+				<div class="form-group">
+					<div class="form-group">
+						<label for="user" class="col-sm-2 topmargin large">Benutzername</label>
+						<div class="col-sm-10">
+							<input type="text" class="form-control input-lg topmargin"
+								placeholder="Benutzername" name="user" />
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="password" class="col-sm-2 topmargin large">Passwort</label>
+						<div class="col-sm-10 topmargin">
+							<input type="password" class="form-control input-lg"
+								placeholder="Passwort" name="password" />
+						</div>
+					</div>
+
+					<div class="form-group">
+						<label for="fname" class="col-sm-2 topmargin large">Vorname</label>
+						<div class="col-sm-10 topmargin">
+							<input type="text" class="form-control input-lg"
+								placeholder="Vorname" name="fname" />
+						</div>
+					</div>
+
+					<div class="form-group">
+						<label for="lname" class="col-sm-2 topmargin large">Nachname</label>
+						<div class="col-sm-10 topmargin">
+							<input type="text" class="form-control input-lg"
+								placeholder="Nachname" name="lname" />
+						</div>
+					</div>
+
+					<div class="row">
+
+						<div class="form-group col-sm-4 col-sm-offset-2">
+							<label class="radio-inline large"> <input type="radio"
+								name="role" id="inlineRadio1" value="1"> Admin
+							</label> <label class="radio-inline large"> <input type="radio"
+								name="role" id="inlineRadio2" value="0"> User
+							</label>
+						</div>
+					</div>
+
+					<div class="row">
+
+						<div class="form-group col-sm-offset-2">
+
+							<input type="submit" name="submit" class="btn btn-success btn-lg"
+								id="loginbutton" value="Login!" />
+
+						</div>
+
+					</div>
+
+
+				</div>
 			</form>
-
-
 		</div>
 	</div>
 
-
-</div>
-
-
-
-
-<body></body>
+</body>
 </html>
