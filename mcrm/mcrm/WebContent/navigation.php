@@ -71,7 +71,7 @@ Diese fügt der Navigation einges an Funktionalität hinzu -->
 		 } else {
 			 $("#menuNutzerverwaltung").show();			 
 		 }
-		 
+		 //Kommentar - Trottel
 		//Eingeloggte Nutzer sehen Logut, nicht eingeloggte den Login-Button:
 		
 		
