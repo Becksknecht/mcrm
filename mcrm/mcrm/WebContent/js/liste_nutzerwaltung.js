@@ -25,7 +25,7 @@
 								+ data[i].Nachname
 								+ '  </div></div><div class="row"><div class="col-xs-2"> Username: </div><div class="col-xs-6">  '
 								+ data[i].Nutzername
-								+ ' </div>	</div></div><div class="col-xs-2"> <a href="nutzerPasswort.php"> <button class="btn btn-success btn-lg"> Passwort ändern </button> </a></div>'
+								+ ' </div>	</div></div><div class="col-xs-2"> <a href="nutzerPasswort.php"> <button class="btn btn-success btn-lg"> Passwort &auml;ndern </button> </a></div>'
 
 						// Anhängen des jeweils erzeugten Elements via jquery an
 						// das div mit der entsprechenden id

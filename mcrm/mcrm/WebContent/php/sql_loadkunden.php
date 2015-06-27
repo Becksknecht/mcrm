@@ -10,7 +10,7 @@ include 'dbconnect.php';
  *Kunden mit Kunde_inStore=1 in die DB eingetragen.
  *Weiterhin werden die Kunden aufsteigend nach Priorität "Kundenklasse" geordnet.
 */
-$sql = "SELECT * From Kunde WHERE Kunde_inStore = 1 ORDER BY Kundenklasse_Kundenklasse ASC";
+$sql = "SELECT * From kunde WHERE Kunde_inStore = 1 ORDER BY Kundenklasse_Kundenklasse ASC";
 
 #INSTORE wird wnen man kunde annimt auf 0 gesetzt
 
