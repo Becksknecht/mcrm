@@ -31,8 +31,9 @@
 		/*	1. Bestimme Pfad
 			2. Extrahiere Dateinamen
 			3. Entferne Dateierweiterung (.php)
-			4. Erstelle MenÃ¼ID
-			5. Highlighte entsprechenden MenÃ¼punkt*/
+			4. Erstelle einen Identifizierenden String für die Menü-Elemente
+			5. Highlighte entsprechenden Menüpunkt
+			6. Markiere bei den Unterseiten der Nutzerverwaltung weiterhin das Menüelement Nutzerverwaltung als aktiv*/
 
 		//1. Bestimme Pfad:
 		var path = window.location.pathname;
@@ -47,4 +48,8 @@
 		pageID = "#menu"+pageID.substring(0,1).toUpperCase() + pageID.substring(1).toLowerCase(); //Erstelle String, der auf Navigationselemente referenziert
 		//5. Highlighte MenÃ¼eintrag der aktiven Seite
 		$(pageID).addClass("active");
+		//6. Unterseiten der 
+		if ((pageID=="#menuNutzeranlegen")||(pageID=="#menuNutzerloeschen")){
+			$("#menuNutzerverwaltung").addClass("active");
+		}
 
